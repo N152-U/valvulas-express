@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Module: RoleRouter | Template Express Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="css/custom.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 25px; height: 25px">
+        
+            <a href="http://10.11.11.207:10088/SDP_SCMX/pipas-express" rel="noopener noreferrer" target="_blank">
+                <img src="https://play-lh.googleusercontent.com/TIRhCRgQYm-UiXf5mftWYivXXgoGRSgSie_-9FVA1D9pL21w8Egb2lYnvukd3enY4OOf" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Template Express Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#"><h4>API</h4></a>
+            </li>
+            <li id="examples-tab">
+                <a href="#"><h4>Examples</h4></a>
+            </li>
+        </ol>
+    
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-Role.html">Role</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Role_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Role.html#~role">role</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-Role.html#.Role">Role</a></li></ul></div></li><li><a href="module-RoleController.html">RoleController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RoleController.html#~create">create</a></li><li><a href="module-RoleController.html#~deleteOne">deleteOne</a></li><li><a href="module-RoleController.html#~getAll">getAll</a></li><li><a href="module-RoleController.html#~getAllByStatus">getAllByStatus</a></li><li><a href="module-RoleController.html#~getById">getById</a></li><li><a href="module-RoleController.html#~update">update</a></li></ul></div></li><li><a href="module-RoleRouter.html">RoleRouter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleRouter_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-RoleRouter.html#CreateRole">CreateRole</a></li><li><a href="module-RoleRouter.html#GetAllRoles">GetAllRoles</a></li><li><a href="module-RoleRouter.html#GetRoleByID">GetRoleByID</a></li><li><a href="module-RoleRouter.html#GetRoleByID">GetRoleByID</a></li><li><a href="module-RoleRouter.html#UpdateRoleByID">UpdateRoleByID</a></li></ul></div></li><li><a href="module-RoleService.html">RoleService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RoleService.html#~create">create</a></li><li><a href="module-RoleService.html#~deleteOne">deleteOne</a></li><li><a href="module-RoleService.html#~getAll">getAll</a></li><li><a href="module-RoleService.html#~getAllByStatus">getAllByStatus</a></li><li><a href="module-RoleService.html#~getById">getById</a></li><li><a href="module-RoleService.html#~update">update</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>RoleRouter</h2>
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description">Role Routers</div>
+            
+
+            
+                
+
+<dt>
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Andrea Naraly Solis Martinez</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+        
+        </div>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:express</li>
+        
+            <li><a href="module-RoleController.html">module:RoleController</a></li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+
+<dt>
+<h4 class="name" id="CreateRole">
+    <span class="type-signature"><span class="icon green">route</span> </span>CreateRole<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="routers_RoleRouter.js.html">routers/RoleRouter.js</a></code>,
+        <code><a href="routers_RoleRouter.js.html#line17">line 17</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:MiddlewareIndex.VerifyToken</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/role/create</td>
+                            </tr>
+                            </table>
+                            ROUTERCreate Role with permissions
+                            <h5>Body Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Role</td>
+            <td class="type">module:Role.Role</td>
+            
+            
+            <td class="description last">RoleObject.</td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Role</td>
+            <td class="type">module:Role.Role</td>
+            
+            
+            <td class="description last">RoleObject.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">201</td>
+            
+            
+            <td class="description last">Role has been created.</td>
+          </tr>
+          </table>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="GetAllRoles">
+    <span class="type-signature"><span class="icon green">route</span> </span>GetAllRoles<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="routers_RoleRouter.js.html">routers/RoleRouter.js</a></code>,
+        <code><a href="routers_RoleRouter.js.html#line29">line 29</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:MiddlewareIndex.VerifyToken</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/role/getAll</td>
+                            </tr>
+                            </table>
+                            ROUTERGet All Roles.
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Role</td>
+            <td class="type">Array.&lt;module:Role.Role&gt;</td>
+            
+            
+            <td class="description last">Array of RoleObject.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">All roles have been brought.</td>
+          </tr>
+          </table>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="GetRoleByID">
+    <span class="type-signature"><span class="icon green">route</span> </span>GetRoleByID<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="routers_RoleRouter.js.html">routers/RoleRouter.js</a></code>,
+        <code><a href="routers_RoleRouter.js.html#line40">line 40</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:MiddlewareIndex.VerifyToken</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/role/getByStatus/:status</td>
+                            </tr>
+                            </table>
+                            ROUTERGet Role by Id.
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:status</td>
+            <td class="type">Number</td>
+            
+            
+            <td class="description last">identifier for Role.</td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Role</td>
+            <td class="type">module:Role.Role</td>
+            
+            
+            <td class="description last">RoleObject.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Role have been brought.</td>
+          </tr>
+          </table>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="GetRoleByID">
+    <span class="type-signature"><span class="icon green">route</span> </span>GetRoleByID<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="routers_RoleRouter.js.html">routers/RoleRouter.js</a></code>,
+        <code><a href="routers_RoleRouter.js.html#line52">line 52</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:MiddlewareIndex.VerifyToken</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/role/getById/:id</td>
+                            </tr>
+                            </table>
+                            ROUTERGet Role by Id.
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:id</td>
+            <td class="type">Number</td>
+            
+            
+            <td class="description last">identifier for Role.</td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Role</td>
+            <td class="type">module:Role.Role</td>
+            
+            
+            <td class="description last">RoleObject.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Role have been brought.</td>
+          </tr>
+          </table>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="UpdateRoleByID">
+    <span class="type-signature"><span class="icon green">route</span> </span>UpdateRoleByID<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="routers_RoleRouter.js.html">routers/RoleRouter.js</a></code>,
+        <code><a href="routers_RoleRouter.js.html#line64">line 64</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:MiddlewareIndex.VerifyToken</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">PUT</td>
+                            <td class="name last">/role/update/:id</td>
+                            </tr>
+                            </table>
+                            ROUTERUpdate Role by Id.
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:id</td>
+            <td class="type">Number</td>
+            
+            
+            <td class="description last">identifier for Role.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Role have been updated.</td>
+          </tr>
+          </table>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="https://play-lh.googleusercontent.com/TIRhCRgQYm-UiXf5mftWYivXXgoGRSgSie_-9FVA1D9pL21w8Egb2lYnvukd3enY4OOf" style="width: 25px; height: 25px">
+    <div class="footer-text">My awesome footer text</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = 'module:RoleRouter_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: routers/RoleRouter.js | Template Express Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="css/custom.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 25px; height: 25px">
+        
+            <a href="http://10.11.11.207:10088/SDP_SCMX/pipas-express" rel="noopener noreferrer" target="_blank">
+                <img src="https://play-lh.googleusercontent.com/TIRhCRgQYm-UiXf5mftWYivXXgoGRSgSie_-9FVA1D9pL21w8Egb2lYnvukd3enY4OOf" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Template Express Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#"><h4>API</h4></a>
+            </li>
+            <li id="examples-tab">
+                <a href="#"><h4>Examples</h4></a>
+            </li>
+        </ol>
+    
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-Role.html">Role</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Role_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Role.html#~role">role</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-Role.html#.Role">Role</a></li></ul></div></li><li><a href="module-RoleController.html">RoleController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RoleController.html#~create">create</a></li><li><a href="module-RoleController.html#~deleteOne">deleteOne</a></li><li><a href="module-RoleController.html#~getAll">getAll</a></li><li><a href="module-RoleController.html#~getAllByStatus">getAllByStatus</a></li><li><a href="module-RoleController.html#~getById">getById</a></li><li><a href="module-RoleController.html#~update">update</a></li></ul></div></li><li><a href="module-RoleRouter.html">RoleRouter</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleRouter_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-RoleRouter.html#CreateRole">CreateRole</a></li><li><a href="module-RoleRouter.html#GetAllRoles">GetAllRoles</a></li><li><a href="module-RoleRouter.html#GetRoleByID">GetRoleByID</a></li><li><a href="module-RoleRouter.html#GetRoleByID">GetRoleByID</a></li><li><a href="module-RoleRouter.html#UpdateRoleByID">UpdateRoleByID</a></li></ul></div></li><li><a href="module-RoleService.html">RoleService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RoleService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RoleService.html#~create">create</a></li><li><a href="module-RoleService.html#~deleteOne">deleteOne</a></li><li><a href="module-RoleService.html#~getAll">getAll</a></li><li><a href="module-RoleService.html#~getAllByStatus">getAllByStatus</a></li><li><a href="module-RoleService.html#~getById">getById</a></li><li><a href="module-RoleService.html#~update">update</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Role Routers
+ * @module src/routers/RoleRouter
+ * @name RoleRouter
+ * @author Andrea Naraly Solis Martinez
+ * @requires express
+ * @requires module:RoleController
+ */
+
+const express = require('express');
+const { RoleValidator } = require('../validators/index.js');
+const { RoleController } = require('../controllers/index.js');
+const { verifyToken, roleHasPermissions } = require('../middleware/index.js');
+
+const router = express.Router();
+
+/**
+ * ROUTER
+ * Create Role with permissions
+ * @name CreateRole
+ * @path {POST} /role/create
+ * @code {201} Role has been created.
+ * @body {module:Role.Role} Role RoleObject.
+ * @response {module:Role.Role} Role RoleObject.
+ * @chain {@link module:MiddlewareIndex.VerifyToken}
+ */
+router.post('/role/create', verifyToken, roleHasPermissions("CREATE.ROLE"), RoleController.create);
+
+/**
+ * ROUTER
+ * Get All Roles.
+ * @name GetAllRoles
+ * @path {GET} /role/getAll
+ * @code {200} All roles have been brought.
+ * @response {module:Role.Role[]} Role Array of RoleObject.
+ * @chain {@link module:MiddlewareIndex.VerifyToken}
+ */
+router.get('/role/getAll', verifyToken, roleHasPermissions("READ.ROLE"), RoleController.getAll);
+
+/**
+ * ROUTER
+ * Get Role by Id.
+ * @name GetRoleByID
+ * @path {GET} /role/getByStatus/:status
+ * @code {200} Role have been brought.
+ * @params {Number} :status identifier for Role.
+ * @response {module:Role.Role} Role RoleObject.
+ * @chain {@link module:MiddlewareIndex.VerifyToken}
+ */
+router.get('/role/getByStatus/:status', verifyToken, roleHasPermissions('READ.ROLE'), RoleController.getAllByStatus);
+
+/**
+ * ROUTER
+ * Get Role by Id.
+ * @name GetRoleByID
+ * @path {GET} /role/getById/:id
+ * @code {200} Role have been brought.
+ * @params {Number} :id identifier for Role.
+ * @response {module:Role.Role} Role RoleObject.
+ * @chain {@link module:MiddlewareIndex.VerifyToken}
+ */
+router.get('/role/getById/:id', verifyToken, roleHasPermissions('READ.ROLE'), RoleController.getById);
+
+/**
+ * ROUTER
+ * Update Role by Id.
+ * @name UpdateRoleByID
+ * @path {PUT} /role/update/:id
+ * @code {200} Role have been updated.
+ * @params {Number} :id identifier for Role.
+ * @chain {@link module:MiddlewareIndex.VerifyToken}
+ */
+router.put('/role/update/:id', verifyToken, roleHasPermissions("UPDATE.ROLE"), RoleController.update);
+router.delete('/role/delete/:id', verifyToken, roleHasPermissions("DELETE.ROLE"), RoleController.deleteOne);
+
+module.exports = router;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="https://play-lh.googleusercontent.com/TIRhCRgQYm-UiXf5mftWYivXXgoGRSgSie_-9FVA1D9pL21w8Egb2lYnvukd3enY4OOf" style="width: 25px; height: 25px">
+    <div class="footer-text">My awesome footer text</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
