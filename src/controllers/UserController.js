@@ -2,6 +2,7 @@ const { UserService } = require("../services/index.js");
 const auth = require("../utils/auth.js");
 const jwt = require("jsonwebtoken");
 const APIError = require("../utils/error.js");
+const Telegram = require("../utils/telegram-send-message");
 
 module.exports = {
   // CREATE
@@ -39,10 +40,10 @@ module.exports = {
       const ipLogin = req.connection.remoteAddress;
       const user = await UserService.findOneByUsername(username);
 
-      if (!user) throw new APIError("Error on credentials.", 400);
+      if (!user) throw new APIError("Error en las credenciales.", 400);
       if (!user.status) throw new APIError("User Not Active", 400);
       const isValid = auth.comparePasswords(password, user.password);
-      if (!isValid) throw new APIError("Error on credentials.", 400);
+      if (!isValid) throw new APIError("Error en las credenciales.", 400);
       await UserService.registerIpAndLastLogin(user.id, ipLogin);
       const token = auth.createToken(user);
       res.status(200).json({ message: "Log in", payload: token });
@@ -52,7 +53,7 @@ module.exports = {
       const encodedURI = encodeURI(error);
       Telegram.setMessage(encodedURI);
       Telegram.send();
-      process.env.DEBUG ? next(console.trace(error)) : next(error);
+      next(error);
     }
   },
   // READ ALL BY STATUS TRUE
