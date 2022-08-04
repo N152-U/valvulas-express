@@ -1,3 +1,3 @@
 # template-express
 
-Repositorio para el template de express
+Repositorio para válvulas de express
